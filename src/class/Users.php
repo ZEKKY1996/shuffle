@@ -4,7 +4,6 @@ class Users
 {
     public function __construct()
     {
-
     }
 
     public function registerUserName(object $link, string $name): void
@@ -32,5 +31,14 @@ class Users
         };
         mysqli_free_result($result);
         return $userNames;
+    }
+
+    public function validateUserName(string $name): array
+    {
+        $errors = [];
+        if (strlen($name) == 0) {
+            $errors[] = "社員名を入力してください。".PHP_EOL;
+        }
+        return $errors;
     }
 }

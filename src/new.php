@@ -4,6 +4,7 @@ require_once __DIR__ . '/lib/mysqli.php';
 require_once __DIR__ . '/class/Users.php';
 
 $link = dbConnect();
+$errors = [];
 $userNames = [];
 $user = new Users();
 $userNames = $user->displayUserName($link);
